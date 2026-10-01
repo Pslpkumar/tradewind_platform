@@ -15,8 +15,12 @@ spring:
   kafka:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
+logging:
+  level:
+    '[com.tradewind.order_service]': ${LOG_LEVEL:DEBUG}
+
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,info
