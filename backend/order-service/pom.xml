@@ -29,6 +29,7 @@
 	<properties>
 		<java.version>21</java.version>
 		<springdoc.version>3.1.1</springdoc.version>
+		<swagger-request-validator.version>2.46.1</swagger-request-validator.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -118,6 +119,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.oai</groupId>
+			<artifactId>swagger-request-validator-mockmvc</artifactId>
+			<version>${swagger-request-validator.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
