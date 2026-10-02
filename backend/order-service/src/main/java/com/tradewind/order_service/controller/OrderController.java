@@ -29,8 +29,8 @@ public class OrderController {
     }
     
     @GetMapping("/{id}")
-    public String getMethodName(@PathVariable("id") String id) {
-        return orderService.getOrderById(UUID.fromString(id)).toString();
+    public String getMethodName(@PathVariable("id") UUID id) {
+        return orderService.getOrderById(id).toString();
     }
 
     @PostMapping

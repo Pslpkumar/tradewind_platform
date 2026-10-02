@@ -1,0 +1,9 @@
+type: object
+required: [field, message]
+properties:
+  field:
+    type: string
+    example: quantity
+  message:
+    type: string
+    example: Quantity must be greater than 0

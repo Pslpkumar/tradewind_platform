@@ -22,4 +22,14 @@ post:
           schema:
             $ref: '../components/schemas/OrderResponse.yml'
     '400':
-      description: Validation failed
+      description: Validation failed (ORD-400) or malformed request body (ORD-400-MALFORMED)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '../components/schemas/Problem.yml'
+    '500':
+      description: Unexpected error (ORD-500)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '../components/schemas/Problem.yml'
