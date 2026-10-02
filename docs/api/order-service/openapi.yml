@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: Tradewind Order Service API
+  version: 1.0.0
+  description: Place and retrieve brokerage orders.
+  contact:
+    name: Tradewind Engineering
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: http://localhost:8081
+    description: Local
+tags:
+  - name: Orders
+    description: Place and retrieve orders
+security: []
+paths:
+  /api/v1/orders:
+    $ref: './paths/orders.yml'
+  /api/v1/orders/{id}:
+    $ref: './paths/orders-by-id.yml'

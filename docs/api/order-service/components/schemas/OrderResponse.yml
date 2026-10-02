@@ -1,0 +1,23 @@
+type: object
+required: [id, symbol, side, quantity, limitPrice, status, createdAt]
+properties:
+  id:
+    type: string
+    format: uuid
+  symbol:
+    type: string
+    example: AAPL
+  side:
+    $ref: './Side.yml'
+  quantity:
+    type: integer
+    format: int32
+    example: 10
+  limitPrice:
+    type: number
+    example: 185.50
+  status:
+    $ref: './OrderStatus.yml'
+  createdAt:
+    type: string
+    format: date-time
