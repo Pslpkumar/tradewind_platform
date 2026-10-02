@@ -1,0 +1,33 @@
+type: object
+required: [status, title, code]
+properties:
+  type:
+    type: string
+    description: URI identifying the problem type. Omitted when not set.
+  title:
+    type: string
+    description: Short, human-readable summary
+    example: Order not found
+  status:
+    type: integer
+    format: int32
+    description: HTTP status code
+    example: 404
+  detail:
+    type: string
+    description: Explanation specific to this occurrence
+    example: "Order not found: 00000000-0000-0000-0000-000000000000"
+  instance:
+    type: string
+    description: The request path that caused the problem
+    example: /api/v1/orders/00000000-0000-0000-0000-000000000000
+  code:
+    type: string
+    description: Stable, machine-readable error code
+    enum: [ORD-400, ORD-400-MALFORMED, ORD-404, ORD-500]
+    example: ORD-404
+  errors:
+    type: array
+    description: Field-level validation errors, present only for ORD-400
+    items:
+      $ref: './FieldError.yml'

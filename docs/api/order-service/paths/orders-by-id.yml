@@ -17,5 +17,21 @@ get:
         application/json:
           schema:
             $ref: '../components/schemas/OrderResponse.yml'
+    '400':
+      description: The id is not a valid UUID (ORD-400-MALFORMED)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '../components/schemas/Problem.yml'
     '404':
-      description: Order not found
+      description: Order not found (ORD-404)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '../components/schemas/Problem.yml'
+    '500':
+      description: Unexpected error (ORD-500)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '../components/schemas/Problem.yml'
