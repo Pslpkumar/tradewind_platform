@@ -1,0 +1,23 @@
+type: object
+required: [symbol, side, quantity, limitPrice]
+properties:
+  symbol:
+    type: string
+    minLength: 1
+    maxLength: 12
+    description: Ticker symbol, stored in upper case
+    example: AAPL
+  side:
+    $ref: './Side.yml'
+  quantity:
+    type: integer
+    format: int32
+    minimum: 1
+    description: Number of shares
+    example: 10
+  limitPrice:
+    type: number
+    minimum: 0
+    exclusiveMinimum: true
+    description: Limit price per share
+    example: 185.50

@@ -1,0 +1,25 @@
+post:
+  tags: [Orders]
+  operationId: placeOrder
+  summary: Place a new order
+  description: Creates an order with status NEW. The server assigns the id and timestamp.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../components/schemas/CreateOrderRequest.yml'
+  responses:
+    '201':
+      description: Order placed
+      headers:
+        Location:
+          description: URL of the created order
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/OrderResponse.yml'
+    '400':
+      description: Validation failed
